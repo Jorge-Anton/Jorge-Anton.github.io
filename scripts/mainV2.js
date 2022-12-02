@@ -11,13 +11,13 @@ function filtrar(respuesta) {
     let anochecerEnSegundos = horaAnochecer * 3600 + Number(anochecer.split(':')[1]) * 60 + Number(amanecer.split(':')[2])
     
     // Intervalo de día
-    let intervaloDiurno = (anochecerEnSegundos - amanecerEnSegundos) / 11
+    let intervaloDiurno = (anochecerEnSegundos - amanecerEnSegundos) / 12
     
     // Duración de noche
     let nocheEnSegundos = (24*3600 - anochecerEnSegundos + amanecerEnSegundos)
     
     // Intervalo de noche
-    let intervaloNocturno = nocheEnSegundos / 5
+    let intervaloNocturno = nocheEnSegundos / 4
     
     let prueba = 1
     // Guardo las variables en el navegador
@@ -81,6 +81,8 @@ function obtenerImagen(amanecerEnSegundos, anochecerEnSegundos, intervaloDiurno,
             imagen = 10
         } else if (tiempo >= (amanecerEnSegundos + intervaloDiurno *10) && tiempo < (amanecerEnSegundos + intervaloDiurno *11)) {
             imagen = 11
+        } else if (timepo >= (amanecerEnSegundos + intervaloDiurno *11) && tiempo < (amanecerEnSegundos + intervaloDiurno *12)) {
+            imagen = 12
         }
     }
     
@@ -90,27 +92,23 @@ function obtenerImagen(amanecerEnSegundos, anochecerEnSegundos, intervaloDiurno,
         if (horario == "noche") {
             tiempo = tiempo - anochecerEnSegundos
             if (tiempo >= 0 && tiempo < intervaloNocturno) {
-                imagen = 12
-            } else if (tiempo >= intervaloNocturno && tiempo < intervaloNocturno * 2) {
                 imagen = 13
-            } else if (tiempo >= intervaloNocturno * 2 && tiempo < intervaloNocturno * 3) {
+            } else if (tiempo >= intervaloNocturno && tiempo < intervaloNocturno * 2) {
                 imagen = 14
-            } else if (tiempo >= intervaloNocturno * 3 && tiempo < intervaloNocturno * 4) {
+            } else if (tiempo >= intervaloNocturno * 2 && tiempo < intervaloNocturno * 3) {
                 imagen = 15
-            } else if (tiempo >= intervaloNocturno * 4 && tiempo < intervaloNocturno * 5) {
+            } else if (tiempo >= intervaloNocturno * 3 && tiempo < intervaloNocturno * 4) {
                 imagen = 16
             }
         } else {
             tiempo = tiempo + 86400 - anochecerEnSegundos
             if (tiempo >= 0 && tiempo < intervaloNocturno) {
-                imagen = 12
-            } else if (tiempo >= intervaloNocturno && tiempo < intervaloNocturno * 2) {
                 imagen = 13
-            } else if (tiempo >= intervaloNocturno * 2 && tiempo < intervaloNocturno * 3) {
+            } else if (tiempo >= intervaloNocturno && tiempo < intervaloNocturno * 2) {
                 imagen = 14
-            } else if (tiempo >= intervaloNocturno * 3 && tiempo < intervaloNocturno * 4) {
+            } else if (tiempo >= intervaloNocturno * 2 && tiempo < intervaloNocturno * 3) {
                 imagen = 15
-            } else if (tiempo >= intervaloNocturno * 4 && tiempo < intervaloNocturno * 5) {
+            } else if (tiempo >= intervaloNocturno * 3 && tiempo < intervaloNocturno * 4) {
                 imagen = 16
             }
         }

@@ -61,7 +61,7 @@
 
 .search-box:focus {
     outline: none;
-    top: 300px;
+    top: 350px;
     transform: scale(130%);
     color: rgb(87, 87, 87);
 }
