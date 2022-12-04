@@ -103,3 +103,13 @@
 .search-box-noche:focus::placeholder {
     color: rgb(183, 183, 183);
 }
+
+.urjc {
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    left: 0;
+}

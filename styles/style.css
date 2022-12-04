@@ -1,0 +1,51 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #242424;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#image-container {
+    position: relative;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#image-container img {
+    position: absolute;
+    transform: scale(110%);
+}
+
+@keyframes transition-opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animation {
+    animation: transition-opacity 1.5s linear;
+}
+
+@keyframes loading {
+    from {
+        transform: scale(150%);
+        filter: blur(40px);
+    }
+    to {
+        transform: scale(110%);
+    }
+}
+
+.load {
+    animation: loading .5s cubic-bezier(.17,.67,.66,1.28);
+}

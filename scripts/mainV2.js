@@ -43,7 +43,7 @@ function filtrar(respuesta) {
 
 function obtenerImagen(amanecerEnSegundos, anochecerEnSegundos, intervaloDiurno, intervaloNocturno) {
     let imagen
-    // Primero compruebo se es de día o de noche
+    // Primero compruebo se es de día o de nocheprueba
     let hoy
     let horario
     hoy = new Date()
