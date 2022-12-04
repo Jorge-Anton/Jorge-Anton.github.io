@@ -15,7 +15,6 @@ if (comprobacion == 1) {
         if (nuevaImagen != imagen) {
             cargarImagen(nuevaImagen)
             imagen = nuevaImagen
-            console.log(imagen)
         }
         sessionStorage.setItem("imagen", imagen)
     }, 60000)
@@ -58,7 +57,6 @@ function filtrar(respuesta) {
     sessionStorage.setItem("intervaloNocturno", intervaloNocturno)
     sessionStorage.setItem("fetch", comprobacion)
     imagen = obtenerImagen(imagenesdia, imagenesnoche, amanecerEnSegundos, anochecerEnSegundos, intervaloDiurno, intervaloNocturno)
-    console.log(imagen)
     sessionStorage.setItem("imagen", imagen)
     precargarImagen(imagen)
     setInterval(function() {
@@ -66,7 +64,6 @@ function filtrar(respuesta) {
         if (nuevaImagen != imagen) {
             cargarImagen(nuevaImagen)
             imagen = nuevaImagen
-            console.log(imagen)
         } 
         sessionStorage.setItem("imagen", imagen)
     }, 60000)
@@ -127,6 +124,7 @@ function cargarImagen(imagen) {
         if (imagen == i) {
             image[i] = document.createElement("img")
             image[i].src = `Mojave-reducida/reducidas-${i}.jpeg`
+            image[i].alt = `image-${i}`
             image[i].classList.add('animation')
             imageContainer.appendChild(image[i])
             break;
@@ -141,6 +139,7 @@ function precargarImagen(imagen) {
         if (imagen == i) {
             image[i] = document.createElement("img")
             image[i].src = `Mojave-reducida/reducidas-${i}.jpeg`
+            image[i].alt = `image-${i}`
             image[i].classList.add('load')
             imageContainer.appendChild(image[i])
             break;
