@@ -142,6 +142,9 @@ function precargarImagen(imagen) {
             image[i].alt = `image-${i}`
             image[i].classList.add('load')
             imageContainer.appendChild(image[i])
+            const input = document.querySelector(".input")
+            input.classList.add('input-animation')
+            document.querySelector(".clock").classList.add('input-animation')
             break;
         }
     }
